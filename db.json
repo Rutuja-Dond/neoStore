@@ -5,7 +5,16 @@
       "firstname": "json-server1",
       "lastname": "abc",
       "email": "abc@gmail.com",
-      "password": "123"
+      "password": "123",
+      "subdata": [
+        {
+          "id": 11,
+          "firstname": "sub-data1",
+          "lastname": "sub-data11",
+          "email": "subdata@gmail.com",
+          "password": "123"
+        }
+      ]
     },
     {
       "firstname": "Rutuja",
@@ -24,15 +33,6 @@
       "agreedToTerms": true,
       "": true,
       "id": 3
-    },
-    {
-      "firstname": "test",
-      "lastname": "test1",
-      "email": "test@gmail.com",
-      "password": "testing",
-      "agreedToTerms": true,
-      "": true,
-      "id": 4
     }
   ]
 }

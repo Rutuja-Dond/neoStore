@@ -19,7 +19,7 @@ const LoginCard = () => {
     e.preventDefault();
 
     if (!isSubmitted) {
-      setIsSubmitted(true); 
+      setIsSubmitted(true);
 
       axios
         .get(URL)
@@ -40,12 +40,12 @@ const LoginCard = () => {
             console.log("Login failed");
             alert("Login failed. Please try again.");
           }
-          setIsSubmitted(false); 
+          setIsSubmitted(false);
         })
         .catch((error) => {
           console.log(error);
           alert("Login failed. Please try again.");
-          setIsSubmitted(false); 
+          setIsSubmitted(false);
         });
     }
   };
@@ -53,12 +53,13 @@ const LoginCard = () => {
   return (
     <>
       <div className="login">
-        <h2 className="login-text text-danger">Log In</h2>
+        <h2 className="login-text text-red">Log In</h2>
         <form className="login-form" onSubmit={handleSubmit}>
           <div className="email-input">
             <label className="input-text">Email</label>
             <input
               type="text"
+              className="form-control"
               placeholder="youremail@address.com"
               id="email"
               name="email"
@@ -68,6 +69,7 @@ const LoginCard = () => {
           <div className="password">
             <label className="input-text">Password</label>
             <input
+              className="form-control"
               type="password"
               placeholder="*********"
               id="password"
@@ -75,16 +77,22 @@ const LoginCard = () => {
               onChange={handleChange}
             />
           </div>
-          <div className="text-end forgot-password">
-            <a href="#" className="forgot"> Forget password </a>
-          </div>
-          <div className="center">
-            <button className="submit-button">Continue</button>
-          </div>
-          <div className="center sign-up">
-            <span> New to NeoSTORE? <a href="/signup">Sign up</a> </span>
-          </div>
+          {/* <div className="text-end forgot-password"> */}
+          <a href="#" className="forgot_password">
+            {" "}
+            Forget password{" "}
+          </a>
         </form>
+        {/* </div> */}
+        <div className="center">
+          <button className="submit-button">Continue</button>
+        </div>
+        <div className="center sign-up">
+          <span>
+            {" "}
+            New to NeoSTORE? <a href="/signup">Sign up</a>{" "}
+          </span>
+        </div>
       </div>
     </>
   );
